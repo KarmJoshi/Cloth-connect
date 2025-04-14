@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+/* Base reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+html, body {
+    height: 100%;
+    background-color:white;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Scrollable form container */
+.container2 {
+    background-color: rgba(0, 0, 0, 0.85);
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    margin: 1% auto;
+    border-radius: 25px;
+    border: 1px solid #333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Zoom effect on hover */
+.container2:hover {
+    transform: scale(1.01);
+}
+
+/* Input container */
+.input-container2 {
+    position: relative;
+    margin: 40px 0;
+    width: 100%;
+}
+
+/* Underline-only input */
+.input-container2 input {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #555;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-container2 input:focus {
+    border-bottom: 2px solid #ff4d4d;
+}
+
+/* Floating label */
+.input-container2 label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 16px;
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-container2 input:focus ~ label,
+.input-container2 input:valid ~ label {
+    top: -14px;
+    font-size: 12px;
+    color: #ff4d4d;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 0 5px;
+}
+
+/* Custom scrollbar styling */
+.container2::-webkit-scrollbar {
+    width: 6px;
+}
+.container2::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 10px;
+}
+.container2::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .container2 {
+        width: 95%;
+        padding: 20px;
+        max-height: 95vh;
+    }
+
+    .input-container2 input {
+        font-size: 14px;
+    }
+
+    .input-container2 label {
+        font-size: 14px;
+    }
+
+    .input-container2 input:focus ~ label,
+    .input-container2 input:valid ~ label {
+        font-size: 11px;
+    }
+}
+h1{
+    color:white;
+    text-align: center;
+}
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid red;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    background: red;
+    color: white;
+}
+@keyframes slideFadeFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to the form container */
+.container2 {
+    animation: slideFadeFromTop 1s ease-out;
+}

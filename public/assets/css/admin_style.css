@@ -1,0 +1,188 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    animation: glassSlideIn 0.8s ease-out;
+    border-radius: 0 0 15px 15px;
+}
+
+@keyframes glassSlideIn {
+    from {
+        transform: translateY(-80px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.header .logo {
+    font-size: 32px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    color: #ff1a1a;
+    text-shadow: 0 0 10px rgba(255, 26, 26, 0.8);
+    letter-spacing: 2px;
+    animation: fadeInLogo 1s ease-in;
+}
+
+@keyframes fadeInLogo {
+    0% { opacity: 0; transform: translateX(-30px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+    animation: fadeInNav 1s ease-in;
+}
+
+@keyframes fadeInNav {
+    0% { opacity: 0; transform: translateX(30px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.header nav ul li a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.header nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 0;
+    background: #ff1a1a;
+    box-shadow: 0 0 10px #ff1a1a;
+    transition: 0.4s ease;
+}
+
+.header nav ul li a:hover,
+.header nav ul li a.active {
+    color: #ff1a1a;
+    text-shadow: 0 0 10px #ff1a1a;
+    transform: scale(1.05);
+}
+
+.header nav ul li a:hover::after,
+.header nav ul li a.active::after {
+    width: 100%;
+}
+
+
+h1{
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    margin-top: 50px;
+}
+/* Table Container */
+.table-container {
+    width: 85%;
+    margin: 50px auto;
+    overflow-x: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05); /* Subtle glass effect */
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(0, 162, 255, 0.3);
+    backdrop-filter: blur(15px);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Header Design with Gradient Animation */
+thead {
+    background: linear-gradient(45deg, #0033cc, #0066ff, #00ccff);
+    background-size: 200% 200%;
+    animation: gradientMove 3s infinite alternate;
+}
+
+@keyframes gradientMove {
+    0% { background-position: left; }
+    100% { background-position: right; }
+}
+
+th {
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Table Cells */
+td {
+    padding: 15px;
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Row Hover Effect */
+tbody tr {
+    transition: all 0.3s ease-in-out;
+}
+
+tbody tr:hover {
+    background: rgba(0, 162, 255, 0.15);
+    transform: scale(1.02);
+    box-shadow: 0px 0px 20px rgba(0, 162, 255, 0.5);
+}
+.main-content {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styled Image Links */
+a {
+    color: #00eaff; /* Neon Cyan */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ffffff; /* White on hover */
+}
